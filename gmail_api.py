@@ -1,4 +1,6 @@
 # Connect to gmail API and read e-mail
+# follow these steps: https://developers.google.com/gmail/api/quickstart/python
+
 
 from __future__ import print_function
 import pickle
