@@ -49,18 +49,15 @@ def show_subpath(subpath):
     # show the subpath after /path/
     return 'Subpath %s' % escape(subpath)
 
-
 # TEMPLATES
 @app.route('/linkit/')
 @app.route('/linkit/<name>')
 def linkit(name=None):
+    if name == "Herman":
+        return "Welcome back Herman"
+
     return render_template('linkit.html', name=name)
 
-
-# Set environment variables and run Flask
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8000))
-    app.run(host='0.0.0.0', port=port, debug=True)
 
 ####
 ####   ______                               _
@@ -70,8 +67,23 @@ if __name__ == '__main__':
 ####  | |____   >  <  |  __/ | |    | (__  | | \__ \ |  __/
 ####  |______| /_/\_\  \___| |_|     \___| |_| |___/  \___|
 ####
-####  No it's time to do something real!!! 
+####  No it's time to do something real!!!
 ####
 #### 1) Go to the Flask documentation
 #### 2) Try the existing endpoints
 #### 3) Add some endpoints to your app, try out all the basic http methods (POST, PUT, DELETE)
+
+
+
+
+
+
+
+
+
+
+
+# Set environment variables and run Flask
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host='0.0.0.0', port=port, debug=True)
