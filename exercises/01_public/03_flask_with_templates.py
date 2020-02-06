@@ -1,6 +1,7 @@
 from flask import Flask, escape, url_for
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
   return 'Index Page'

@@ -27,3 +27,9 @@ PORT = 8080
 httpd = HTTPServer(('localhost', PORT), SimpleHTTPRequestHandler)
 print("serving at port", PORT)
 httpd.serve_forever()
+
+# Assignment
+# Post your name and age and make the http server return it
+
+# Extra credit
+# Make the http server return a list of all the names and ages that have been posted

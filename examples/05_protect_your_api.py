@@ -3,7 +3,7 @@ from io import BytesIO
 import argparse
 import json
 
-key = "dXNlcjpwYXNzd29yZA=="
+key = "dXNlcjpwYXNzd29yZA=="  # Hash of username "user" and password "password" in base64 encryption (user:password)
 
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):

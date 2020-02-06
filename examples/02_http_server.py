@@ -15,3 +15,8 @@ PORT = 8080
 httpd = HTTPServer(('localhost', PORT), SimpleHTTPRequestHandler)
 print("serving at port", PORT)
 httpd.serve_forever()
+
+# Assignment:
+# Access your http server through your browser
+# Do a GET with Postman
+# Do a POST with Postman
