@@ -6,7 +6,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.end_headers()
-        self.wfile.write(b'Hello, world!')
+        self.wfile.write(b'{"message": "Hello, world!"}')
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
@@ -19,6 +19,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         response.write(body)
         self.wfile.write(response.getvalue())
 
+# Start the HTTP Server
 PORT = 8080
 
 httpd = HTTPServer(('localhost', PORT), SimpleHTTPRequestHandler)

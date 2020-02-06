@@ -7,6 +7,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b'Hello, world!')
 
+# Start the HTTP Server
 PORT = 8080
 
 httpd = HTTPServer(('localhost', PORT), SimpleHTTPRequestHandler)
