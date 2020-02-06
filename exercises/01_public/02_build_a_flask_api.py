@@ -58,6 +58,7 @@ def linkit(name=None):
 
 
 # AUTHENTICATION
+# curl -i -H 'x-api-key: linkitbootcamp' http://localhost:8000
 @app.route('/supersecret')
 def index():
     headers = request.headers
