@@ -1,6 +1,7 @@
 # Usage:
 # First we imported the Flask class.
 from flask import Flask, escape, url_for, render_template, jsonify, request
+import os
 
 # Next we create an instance of this class. The first argument is the name of the application’s module or package.
 # If you are using a single module (as in this example), you should use __name__ because depending on if it’s started
@@ -57,7 +58,7 @@ def linkit(name=None):
 # AUTHENTICATION
 # curl -i -H 'x-api-key: linkitbootcamp' http://localhost:8000
 @app.route('/supersecret')
-def index():
+def supersecret():
     headers = request.headers
     auth = headers.get("X-Api-Key")
     if auth == 'linkitbootcamp':
