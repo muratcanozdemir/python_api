@@ -57,6 +57,17 @@ def linkit(name=None):
     return render_template('linkit.html', name=name)
 
 
+# AUTHENTICATION
+@app.route('/supersecret')
+def index():
+    headers = request.headers
+    auth = headers.get("X-Api-Key")
+    if auth == 'linkitbootcamp':
+        return jsonify({"message": "OK: Authorized"}), 200
+    else:
+        return jsonify({"message": "ERROR: Unauthorized"}), 401
+
+
 # Set environment variables and run Flask
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8000))
