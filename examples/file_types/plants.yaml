@@ -1,0 +1,9 @@
+description: List of plants by common name
+plants:
+- name: Alder
+  species: Alnus
+  poisonous: true
+- name: Black alder
+  species: Alnus glutinosa, Ilex verticillata
+- name: Common alder
+  species: Alnus glutinosa

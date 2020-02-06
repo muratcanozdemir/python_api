@@ -6,12 +6,11 @@ api_url = "http://localhost:8080"
 headers = {"Accept": "application/json"}
 response = requests.get(api_url, headers=headers)
 
-print ("code:"+ str(response.status_code))
-print ("******************")
-print ("headers:"+ str(response.headers))
-print ("******************")
-print ("content:"+ str(response.text))
-print ("******************")
+print("code:\n" + str(response.status_code))
+print("\n******************\n")
+print("headers:\n" + str(response.headers))
+print("\n******************\n")
+print("content:\n" + str(response.text))
+print("\n******************\n")
 
-
-print ("pretty content:"+ json.dumps(json.loads(response.text), indent=2))
+print("pretty content:\n" + json.dumps(json.loads(response.text), indent=2))

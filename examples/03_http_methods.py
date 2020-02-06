@@ -1,6 +1,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
 
+
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
@@ -18,6 +19,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         response.write(b'\nReceived: ')
         response.write(body)
         self.wfile.write(response.getvalue())
+
 
 # Start the HTTP Server
 PORT = 8080

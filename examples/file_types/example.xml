@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <content>Or we
+can auto
+convert line breaks
+to save space</content>
+   <json>
+      <element>rigid</element>
+      <element>better for data interchange</element>
+   </json>
+   <object>
+      <array>
+         <element>
+            <hello>true</hello>
+            <null_value null="true" />
+         </element>
+         <element>
+            <boolean>true</boolean>
+         </element>
+         <element>
+            <integer>1</integer>
+         </element>
+      </array>
+      <key>value</key>
+   </object>
+   <paragraph>Blank lines denote
+paragraph breaks
+</paragraph>
+   <yaml>
+      <element>slim and flexible</element>
+      <element>better for configuration</element>
+   </yaml>
+</root>
