@@ -1,8 +1,6 @@
 # Usage:
-import os
-
 # First we imported the Flask class.
-from flask import Flask, escape, url_for, render_template
+from flask import Flask, escape, url_for, render_template, jsonify, request
 
 # Next we create an instance of this class. The first argument is the name of the application’s module or package.
 # If you are using a single module (as in this example), you should use __name__ because depending on if it’s started
@@ -53,11 +51,19 @@ def show_subpath(subpath):
 @app.route('/linkit/')
 @app.route('/linkit/<name>')
 def linkit(name=None):
-    if name == "Herman":
-        return "Welcome back Herman"
-
     return render_template('linkit.html', name=name)
 
+
+# AUTHENTICATION
+# curl -i -H 'x-api-key: linkitbootcamp' http://localhost:8000
+@app.route('/supersecret')
+def index():
+    headers = request.headers
+    auth = headers.get("X-Api-Key")
+    if auth == 'linkitbootcamp':
+        return jsonify({"message": "OK: Authorized"}), 200
+    else:
+        return jsonify({"message": "ERROR: Unauthorized"}), 401
 
 ####
 ####   ______                               _
@@ -67,7 +73,7 @@ def linkit(name=None):
 ####  | |____   >  <  |  __/ | |    | (__  | | \__ \ |  __/
 ####  |______| /_/\_\  \___| |_|     \___| |_| |___/  \___|
 ####
-####  No it's time to do something real!!!
+####  No it's time to do something real!!! 
 ####
 #### 1) Go to the Flask documentation
 #### 2) Try the existing endpoints
