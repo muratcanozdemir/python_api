@@ -17,3 +17,6 @@ print("pretty content:\n" + json.dumps(json.loads(response.text), indent=2))
 
 # Assignment
 # Get all ages and increment by 2 and POST to API
+requests.post(api_url, data={'name': 'ben', 'age': 28})
+requests.post(api_url, data={'name': 'sen', 'age': 29})
+requests.post(api_url, data={'name': 'o', 'age': 18})
