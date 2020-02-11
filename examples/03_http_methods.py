@@ -4,10 +4,14 @@ from io import BytesIO
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
+    list_of_entries = []
+
     def do_GET(self):
         self.send_response(200)
         self.end_headers()
         self.wfile.write(b'{"message": "Hello, world!"}')
+        #for item in cls.list_of_entries:
+        #    self.wfile.write(b'{"message": {}\n}'.__format__(item))
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
@@ -19,6 +23,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         response.write(b'\nReceived: ')
         response.write(body)
         self.wfile.write(response.getvalue())
+        #list_of_entries.append((name, age))
 
 
 # Start the HTTP Server
