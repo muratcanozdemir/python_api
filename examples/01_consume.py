@@ -17,7 +17,17 @@ print("pretty content:\n" + json.dumps(json.loads(response.text), indent=2))
 
 # Assignment:
 # Please print only the name, description, and temperament of the Bengal cat
-
+a = json.loads(response.text)[0]
+print('{} is the name. {} is the description. {} are the temperaments.\n'\
+    .format(a.get('breeds')[0].get('name'),\
+     a.get('breeds')[0].get('description'), \
+     a.get('breeds')[0].get('temperament')))
 
 # Extra credit:
 # Please print the names of all the cats in the database
+print("\n==================\n")
+api_url = "https://api.thecatapi.com/v1/breeds"
+response = requests.get(api_url, headers=headers)
+myList = [item.get('name') for item in json.loads(response.text)]
+print(myList)
+
